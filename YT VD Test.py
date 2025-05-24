@@ -3,7 +3,7 @@ import customtkinter as ctk
 def dowload_area (escolha):
     if escolha == 'Fazer Download':
         textvar = ctk.StringVar(value='Abrindo áreas de Download ..')
-    if escolha == 'Uploads Recentes ..':
+    if escolha == 'Uploads Recentes':
         textvar = ctk.StringVar(value='Mostrando Uploads ..')
     if escolha == 'Configurações':
         textvar = ctk.StringVar(value='Sessão de Configurações ..')
