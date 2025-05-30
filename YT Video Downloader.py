@@ -1,7 +1,8 @@
+import urllib.request
 import customtkinter as ctk 
 from PIL import Image 
 from pytubefix import YouTube as yt
-import os 
+import os, urllib 
 #Funções
 
 def insert_url ():
@@ -13,10 +14,11 @@ def insert_url ():
 
 def thumbnail_view():
     global video
-    thumbnail_url = str(video.thumbnail_url())
-    thumbnail = ctk.CTkImage(light_image=Image.open(thumbnail_url), dark_image=Image.open(thumbnail_url), size=(660, 310))
-    thumb_label = ctk.CTkLabel(layout, image=thumbnail)
-    thumb_label.place(x=330,y=100)
+    thumbnail_url = video.thumbnail_url
+    print(thumbnail_url)
+    thumbnail = ctk.CTkImage(light_image=Image.open(urllib.request.urlopen(url=thumbnail_url)), dark_image=Image.open(urllib.request.urlopen(thumbnail_url)), size=(640, 360))
+    thumb_label = ctk.CTkLabel(layout, image=thumbnail, text=None)
+    thumb_label.place(x=335,y=105)
 
 def download():
     global video
